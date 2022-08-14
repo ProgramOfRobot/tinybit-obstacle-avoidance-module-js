@@ -2,7 +2,7 @@
  * A module that helps Tiny-bit automatically avoid obstacles.
  * 一个帮助Tiny-bit自动化避障的模块.
  * @author: 9reyyy
- * @version: a1.1.0
+ * @version: v1.0.0
  */
 namespace ObstacleAvoidance {
 
