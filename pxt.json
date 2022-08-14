@@ -12,7 +12,8 @@
         "main.blocks",
         "main.ts",
         "README.md",
-        "main.py"
+        "main.py",
+        "module.ts"
     ],
     "testFiles": [
         "test.ts"
