@@ -1,37 +1,44 @@
 /**
- * A module that can help you control Tiny-bit better.
+ * A module that helps Tiny-bit automatically avoid obstacles.
+ * 一个帮助Tiny-bit自动化避障的模块.
  * @author: 9reyyy
- * @version: a1.0.0
+ * @version: a1.1.0
  */
 namespace ObstacleAvoidance {
 
     /**
-     * A namespace that saves all the data about Tiny-bit.
+     * A namespace that holds all the data needed by Tiny-bit to run this module.
+     * 一个保存了所有关于Tiny-bit运行此模块所需的数据的命名空间.
      */
     export namespace Data {
 
         /**
-         * A variable that records if the car is running.
+         * A variable used to record whether Tiny-bit is running.
+         * 一个用于记录Tiny-bit是否正在运行的变量.
          */
         export let isRunning = false;
 
         /**
-         * A variable that records if the car is stopping.
+         * A variable used to record whether Tiny-bit stops.
+         * 一个用于记录Tiny-bit是否停下了的变量.
          */
         export let isStopped = false;
 
         /**
-         * A variable that records if the car is running fast.
+         * A variable used to record whether Tiny-bit is running in "FastMode".
+         * 一个用于记录Tiny-bit是否运行于"快速模式"的变量.
          */
         export let isFastMode = true;
 
         /**
-         * A variable that uses to delay the time between turning and running.
+         * A variable that stores some time for delaying Tiny-bit between turns.
+         * 一个存储着在转弯之间停止Tiny-bit一段时间的变量.
          */
         export let delayTime = 350;
 
         /**
-         * An object to save the checking distance of ultrasonic.
+         * An object with Tiny-bit ultrasonic detection distance stored.
+         * 一个保存着Tiny-bit超声波检测距离的对象.
          */
         export const ultrasonic = {
             FAST: {
@@ -43,7 +50,8 @@ namespace ObstacleAvoidance {
         };
 
         /**
-         * An object to save the running speed for Tiny-bit.
+         * An object with Tiny-bit running speed stored.
+         * 一个存储着Tiny-bit运行速度的对象.
          */
         export const running = {
             FAST: {
@@ -55,7 +63,8 @@ namespace ObstacleAvoidance {
         };
 
         /**
-         * An object to save the turning speed and time for Tiny-bit.
+         * An object that stores relevant data when Tiny-bit turns.
+         * 一个存储着Tiny-bit转弯时相关数据的对象.
          */
         export const turning = {
             FAST: {
@@ -69,7 +78,8 @@ namespace ObstacleAvoidance {
         };
 
         /**
-         * Returns the checking distance of ultrasonic.
+         * Returns the detection distance of Tiny-bit 's ultrasonic.
+         * 返回Tiny-bit的超声波的检测距离.
          * @returns object
          */
         export function getUltrasonic() {
@@ -82,6 +92,7 @@ namespace ObstacleAvoidance {
 
         /**
          * Returns the running speed of Tiny-bit.
+         * 返回Tiny-bit的运行速度.
          * @returns object
          */
         export function getRunning() {
@@ -93,7 +104,8 @@ namespace ObstacleAvoidance {
         }
 
         /**
-         * Returns the turning speed and the time of Tiny-bit.
+         * Returns the relevant data of Tiny-bit turning.
+         * 返回Tiny-bit转弯时的相关数据.
          * @returns object
          */
         export function getTurning() {
@@ -107,6 +119,7 @@ namespace ObstacleAvoidance {
 
         /**
          * Switch 'isFastMode' to the opposite state.
+         * 将'isFastMode'切换到相反一面.
          * @returns void
          */
         function switchFastMode() {
@@ -115,6 +128,7 @@ namespace ObstacleAvoidance {
 
         /**
          * Switch 'isRunning' to the opposite state.
+         * 将'isRunning'切换到相反一面.
          * @returns void
          */
         function switchRunning() {
@@ -123,11 +137,13 @@ namespace ObstacleAvoidance {
     };
 
     /**
-     * A namespace that can help you control Tiny-bit.
+     * A namespace that controls Tiny-bit automatically avoid obstacles.
+     * 一个控制着Tiny-bit自动化避障的命名空间.
      */
     export namespace CarControlling {
         /**
-         * Let Tiny-bit turns to a direction.
+         * Let Tiny-bit turn.
+         * 让Tiny-bit转弯.
          * @param direction The direction that you want to turn.
          * @param frequency The frequency that you want to turn.
          * @returns void
@@ -146,6 +162,7 @@ namespace ObstacleAvoidance {
 
         /**
          * Let Tiny-bit go forward.
+         * 让Tiny-bit前进.
          * @returns void
          */
         export function carForward() {
@@ -154,6 +171,7 @@ namespace ObstacleAvoidance {
 
         /**
          * Let Tiny-bit go backward.
+         * 让Tiny-bit后退.
          * @returns void
          */
         export function carBackward() {
@@ -162,6 +180,7 @@ namespace ObstacleAvoidance {
 
         /**
          * Let Tiny-bit turn left.
+         * 让Tiny-bit左转.
          * @returns void
          */
         export function carTurnLeft(times: number = 1) {
@@ -170,6 +189,7 @@ namespace ObstacleAvoidance {
 
         /**
          * Let Tiny-bit turn right.
+         * 让Tiny-bit右转.
          * @returns void
          */
         export function carTurnRight(times: number = 1) {
@@ -178,6 +198,7 @@ namespace ObstacleAvoidance {
 
         /**
          * Let Tiny-bit stop.
+         * 让Tiny-bit停下.
          * @returns void
          */
         export function carStop() {
@@ -188,6 +209,7 @@ namespace ObstacleAvoidance {
 
         /**
          * Checks if there's any obstacle in front of Tiny-bit.
+         * 检查Tiny-bit前面是否有任何障碍物.
          * @param ifTrue if it's true then do sth.
          * @returns boolean
          */
@@ -203,6 +225,7 @@ namespace ObstacleAvoidance {
 
     /**
      * Initializes this module.
+     * 初始化这个模块.
      * @returns void
      */
     export function initialize() {
@@ -211,6 +234,7 @@ namespace ObstacleAvoidance {
 
     /**
      * Do the things like checking the obstacles, going forward or anything.
+     * 循环时需要做的.
      * @returns void
      */
     export function runEachLoop() {
