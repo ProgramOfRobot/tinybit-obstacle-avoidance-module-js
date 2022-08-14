@@ -1,29 +1,5 @@
 # tinybit-obstacle-avoidance-module-js
 
-## EN
-This is a **javascript/typescript** module that helps Tiny-bit ***automatically*** avoid the obstacles.  
-You can use it ***very simply***.
-### First
-Click the *Extensions* and load this module.
-Link: [I am Link!](https://github.com/ProgramOfRobot/tinybit-obstacle-avoidance-module-js)
-### Second
-Add some codes in your code like that:
-```
-// Initilize
-ObstacleAvoidance.initialize();
-// Run loop
-basic.forever(() => {
-  ObstacleAvoidance.runEachLoop();
-});
-```
-This is the **easiest** method to run this module.
-### Third
-Download the hex file and put it in your micro-bit.  
-And then insert your micro-bit into your tiny-bit.
-### Fourth
-***Congratulation***!
-You've known how to use this module!
-
 ## CN
 这是一个由 **javascript/typescript** 语言所编写出来的可以帮助Tiny-bit自动化避障的模块.
 您可以非常简单地使用.
@@ -48,3 +24,27 @@ basic.forever(() => {
 🎇🎇🎇!
 成功啦!
 您已经知道如何使用此模块了！
+
+## EN
+This is a **javascript/typescript** module that helps Tiny-bit ***automatically*** avoid the obstacles.  
+You can use it ***very simply***.
+### First
+Click the *Extensions* and load this module.
+Link: [I am Link!](https://github.com/ProgramOfRobot/tinybit-obstacle-avoidance-module-js)
+### Second
+Add some codes in your code like that:
+```
+// Initilize
+ObstacleAvoidance.initialize();
+// Run loop
+basic.forever(() => {
+  ObstacleAvoidance.runEachLoop();
+});
+```
+This is the **easiest** method to run this module.
+### Third
+Download the hex file and put it in your micro-bit.  
+And then insert your micro-bit into your tiny-bit.
+### Fourth
+***Congratulation***!
+You've known how to use this module!
