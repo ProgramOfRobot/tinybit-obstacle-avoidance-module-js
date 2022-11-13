@@ -1,7 +1,7 @@
 /**
  * A module that helps Tiny-bit automatically avoid obstacles.
  * 一个帮助Tiny-bit自动化避障的模块.
- * @author: 9reyyy
+ * @author: yuN1.
  * @version: v1.0.0
  */
 namespace ObstacleAvoidance {
@@ -16,25 +16,25 @@ namespace ObstacleAvoidance {
          * A variable used to record whether Tiny-bit is running.
          * 一个用于记录Tiny-bit是否正在运行的变量.
          */
-        export let isRunning = false;
+        export let isRunning: boolean = false;
 
         /**
          * A variable used to record whether Tiny-bit stops.
          * 一个用于记录Tiny-bit是否停下了的变量.
          */
-        export let isStopped = false;
+        export let isStopped: boolean = false;
 
         /**
          * A variable used to record whether Tiny-bit is running in "FastMode".
          * 一个用于记录Tiny-bit是否运行于"快速模式"的变量.
          */
-        export let isFastMode = true;
+        export let isFastMode: boolean = true;
 
         /**
          * A variable that stores some time for delaying Tiny-bit between turns.
          * 一个存储着在转弯之间停止Tiny-bit一段时间的变量.
          */
-        export let delayTime = 350;
+        export let delayTime: number = 350;
 
         /**
          * An object with Tiny-bit ultrasonic detection distance stored.
@@ -82,7 +82,7 @@ namespace ObstacleAvoidance {
          * 返回Tiny-bit的超声波的检测距离.
          * @returns object
          */
-        export function getUltrasonic() {
+        export function getUltrasonic(): number {
             if (isFastMode) {
                 return ultrasonic.FAST;
             } else {
@@ -95,7 +95,7 @@ namespace ObstacleAvoidance {
          * 返回Tiny-bit的运行速度.
          * @returns object
          */
-        export function getRunning() {
+        export function getRunning(): number {
             if (isFastMode) {
                 return running.FAST;
             } else {
@@ -108,7 +108,7 @@ namespace ObstacleAvoidance {
          * 返回Tiny-bit转弯时的相关数据.
          * @returns object
          */
-        export function getTurning() {
+        export function getTurning(): number {
             // if (isFastMode) {
             //     return turning.FAST;
             // } else {
